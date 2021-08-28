@@ -1,0 +1,15 @@
+version: "2.4"
+
+services:
+
+  dotnet-docker-lock-issue:
+    image: dotnet-docker-lock-issue:${VERSION:-latest}
+    build:
+      context: .
+    ports:
+      - "8090:80"
+    volumes:
+      - .\:C:\src
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ASPNETCORE_URLS: "http://*:80"
