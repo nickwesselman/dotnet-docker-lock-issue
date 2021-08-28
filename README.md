@@ -14,13 +14,10 @@
 ### Actual
 `dotnet watch` is able to kill the app, but the build fails with one of two errors:
 
-```
-CSC : error CS2012: Cannot open 'C:\src\obj\container\Debug\net5.0\dotnet-docker-lock-issue.dll' for writing -- 'The process cannot access the file 'C:\src\obj\container\Debug\net5.0\dotnet-docker-lock-issue.dll' because it is being used by another process.' [C:\src\dotnet-docker-lock-issue.csproj]
-```
+> CSC : error CS2012: Cannot open 'C:\src\obj\container\Debug\net5.0\dotnet-docker-lock-issue.dll' for writing -- 'The process cannot access the file 'C:\src\obj\container\Debug\net5.0\dotnet-docker-lock-issue.dll' because it is being used by another process.' [C:\src\dotnet-docker-lock-issue.csproj]
 
-```
-C:\Program Files\dotnet\sdk\5.0.202\Microsoft.Common.CurrentVersion.targets(4919,5): warning MSB3026: Could not copy "C:\src\obj\container\Debug\net5.0\apphost.exe" to "C:\src/bin/container/Debug\net5.0\dotnet-docker-lock-issue.exe". Beginning retry 1 in 1000ms. The process cannot access the file 'C:\src\bin\container\Debug\net5.0\dotnet-docker-lock-issue.exe' because it is being used by another process.  [C:\src\dotnet-docker-lock-issue.csproj]
-```
+
+> C:\Program Files\dotnet\sdk\5.0.202\Microsoft.Common.CurrentVersion.targets(4919,5): warning MSB3026: Could not copy "C:\src\obj\container\Debug\net5.0\apphost.exe" to "C:\src/bin/container/Debug\net5.0\dotnet-docker-lock-issue.exe". Beginning retry 1 in 1000ms. The process cannot access the file 'C:\src\bin\container\Debug\net5.0\dotnet-docker-lock-issue.exe' because it is being used by another process.  [C:\src\dotnet-docker-lock-issue.csproj]
 
 ### Observed file locks
 
